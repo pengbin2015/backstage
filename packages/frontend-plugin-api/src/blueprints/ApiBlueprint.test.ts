@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 import { createExtensionInput } from '../wiring';
 import { ApiBlueprint } from './ApiBlueprint';
 import { createApiFactory, createApiRef } from '@backstage/core-plugin-api';
@@ -36,8 +37,9 @@ describe('ApiBlueprint', () => {
     expect(extension).toMatchInlineSnapshot(`
       {
         "$$type": "@backstage/ExtensionDefinition",
+        "T": undefined,
         "attachTo": {
-          "id": "app",
+          "id": "root",
           "input": "apis",
         },
         "configSchema": undefined,
@@ -85,8 +87,9 @@ describe('ApiBlueprint', () => {
     expect(extension).toMatchInlineSnapshot(`
       {
         "$$type": "@backstage/ExtensionDefinition",
+        "T": undefined,
         "attachTo": {
-          "id": "app",
+          "id": "root",
           "input": "apis",
         },
         "configSchema": {
@@ -115,6 +118,7 @@ describe('ApiBlueprint', () => {
             "extensionData": [
               [Function],
             ],
+            "replaces": undefined,
           },
         },
         "kind": "api",
